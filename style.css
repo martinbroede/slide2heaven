@@ -1,0 +1,296 @@
+/* variables */
+
+:root {
+  --acc-col: #e19e00; /* accent color */
+  --bg-col: #ffffff; /* background-color */
+  --extra-light: #f1f1f1;
+  --footer-text: #575757a4; /* light color */
+  --light: #555555; /* light color */
+  --lighter: #e4e4e4; /* light color */
+  --prim-col: #383838; /* primary color */
+  --sec-col: #427dad; /* secondary color  */
+  --padding: 32px;
+}
+
+/* headers */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h6 {
+  color: var(--prim-col);
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+h1 {
+  animation: drop-down 0.66s linear forwards;
+  border-bottom: 3px solid var(--sec-col) !important;
+}
+
+/* font-sizes */
+
+.katex {
+  font-size: 125%;
+}
+
+.katex-html * {
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+/* general */
+
+* {
+  font-family: "72", -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, "Ubuntu", "Droid Sans",
+    sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  padding: 0;
+}
+
+body {
+  animation: fade-in 0.5s linear forwards;
+  background-color: var(--light);
+  color: var(--prim-col);
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 24px;
+  zoom: 75%;
+}
+
+/* sections, footers, pages  */
+
+section {
+  background-color: var(--bg-col);
+  break-before: page;
+  padding-top: var(--padding);
+  padding-right: var(--padding);
+  padding-left: var(--padding);
+  display: inherit;
+  height: 100%;
+}
+
+footer {
+  height: 5rem;
+  background-color: var(--bg-col);
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+  padding-bottom: var(--padding);
+  margin-bottom: 400px;
+}
+
+footer img {
+  position: relative;
+  top: 8px;
+}
+
+footer hr {
+  margin: 0;
+}
+
+footer p {
+  margin-top: 22px;
+  padding-left: 8px;
+  color: var(--footer-text);
+}
+
+#page-0 > * > li > * {
+  font-size: 75%;
+}
+
+/* custom html tags */
+
+btn-a {
+  display: inline;
+  padding: 2px 6px;
+  margin: 2px 2px;
+  font-size: 24px;
+  background-color: var(--sec-col);
+  border-radius: 8px;
+  border-color: var(--sec-col);
+  color: var(--bg-col);
+  border-style: 1px solid;
+}
+
+btn-b {
+  display: inline;
+  padding: 2px 6px;
+  margin: 2px 2px;
+  font-size: 24px;
+  background-color: var(--extra-light);
+  border: 1px solid var(--lighter);
+  color: var(--light);
+}
+
+/* custom horizontal blocks */
+
+block-2 {
+  min-width: 50%;
+  max-width: 50%;
+}
+
+block-3 {
+  min-width: 33.3333%;
+  max-width: 33.3333%;
+}
+
+block-4 {
+  min-width: 25%;
+  max-width: 25%;
+}
+
+block-2,
+block-3,
+block-4 {
+  float: inline-start;
+  display: inline-table;
+}
+
+block-2 > *,
+block-3 > *,
+block-4 > * {
+  margin: 0 12px;
+}
+
+/* misc tag custom styles */
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+table {
+  border: 1px solid var(--lighter);
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+td,
+th {
+  border: 2px solid var(--lighter) !important;
+}
+
+img {
+  display: block;
+}
+
+pre {
+  margin-top: 8px;
+  border: 2px solid var(--lighter);
+}
+
+pre * {
+  font-family: monospace;
+}
+
+li code {
+  padding: 2px 4px;
+  font-family: "72 mono", monospace;
+  font-size: 22px;
+  background-color: var(--extra-light);
+  color: var(--light);
+}
+
+a {
+  text-decoration: var(--lighter) 2.5px underline;
+  color: var(--prim-col);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: inherit;
+}
+
+hr {
+  height: 2px;
+  background-color: var(--lighter);
+  border: none !important;
+}
+
+/* lists */
+
+ul li {
+  list-style-type: square;
+}
+
+ul li::marker,
+ul ul ul li::marker,
+ul ul ul ul ul li::marker,
+ul ul ul ul ul ul ul li::marker,
+ul ul ul ul ul ul ul ul ul li::marker {
+  color: var(--acc-col);
+}
+
+ol li::marker,
+ol ol ol li::marker,
+ol ol ol ol ol li::marker,
+ol ol ol ol ol ol ol li::marker,
+ol ol ol ol ol ol ol ol ol li::marker {
+  color: var(--acc-col);
+}
+
+ul ul li::marker,
+ul ul ul ul li::marker,
+ul ul ul ul ul ul li::marker,
+ul ul ul ul ul ul ul ul li::marker {
+  color: var(--sec-col);
+}
+
+ol ol li::marker,
+ol ol ol ol li::marker,
+ol ol ol ol ol ol li::marker,
+ol ol ol ol ol ol ol ol li::marker {
+  color: var(--sec-col);
+}
+
+/* print  */
+
+@media print {
+  body {
+    background-color: var(--bg-col);
+  }
+}
+
+/* animations  */
+@keyframes drop-down {
+  0% {
+    transform: translateY(-200px) scaleY(0.9);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 1;
+  }
+  65% {
+    transform: translateY(-17px) scaleY(0.9);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-22px) scaleY(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
